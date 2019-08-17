@@ -3,8 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Head from './header';
+import Foot from './footer';
 
+ReactDOM.render(<Head/>, document.getElementById('head'));
 ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Foot/>, document.getElementById('foot'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
