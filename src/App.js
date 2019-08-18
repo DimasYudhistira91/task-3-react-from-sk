@@ -84,11 +84,40 @@ class Timer extends Component {
   }
 }
 
+
+// HANDLE EVENT
+class Toggle extends Component {
+  constructor(props) {
+    super(props)
+      this.state = {
+        togleStatus: true
+      }
+
+      this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick() {
+      this.setState(state => ({
+        togleStatus: !state.togleStatus
+      }))
+    }
+
+    render() {
+      return (
+        <button onClick={this.handleClick}>
+          {this.state.togleStatus ? 'ON' : 'OFF'}
+        </button>
+      )
+    }
+  }
+
+
 class App extends Component {
   render() {
     return (
       <div>
         <header className="App-header">
+          <Toggle/>
         <img src={logo} className="App-logo" alt="logo" />
         <Timer start='0'/>
         <Timer start='10'/>
